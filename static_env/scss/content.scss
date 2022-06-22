@@ -1,0 +1,121 @@
+// Start styling Content
+#content {
+  background-color: $dark_gray;
+  background-image: url("../img/darkgray_background.jpg");
+  background-size: cover;
+  box-shadow: 0 0 15px $minion_yellow;
+}
+// End styling Content
+
+// Start styling Portfolio
+$pro-border-width: 6px;
+
+.pro {
+  color: $white;
+  position: relative;
+  background-color: $black;
+  background-image: linear-gradient(to right, $red, $yellow, $green);
+  width: 250px;
+  height: 325px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    .pro-info {
+      padding: 40% 10px 15px;
+      height: calc(100% - ($pro-border-width * 2));
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        display: block;
+      }
+
+      p {
+        display: -webkit-box;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: $pro-border-width;
+    left: $pro-border-width;
+    width: calc(100% - ($pro-border-width * 2 ));
+    height: calc(100% - ($pro-border-width * 2));
+    border-radius: inherit;
+    z-index: 1;
+  }
+}
+.pro-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  top: $pro-border-width;
+  left: $pro-border-width;
+  width: calc(100% - ($pro-border-width * 2));
+  height: 0%;
+  border-radius: inherit;
+  z-index: 3;
+  transition: all 0.5s ease-in;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    display: none;
+  }
+
+  h3 {
+    font-size: 24pt;
+  }
+
+  p {
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+// Animation
+@keyframes rotate {
+  10% {
+    background-image: linear-gradient(36deg, #ff512f, #dd2476, #1c64ff);
+  }
+  20% {
+    background-image: linear-gradient(72deg, #ff512f, #dd2476, #1c64ff);
+  }
+  30% {
+    background-image: linear-gradient(108deg, #ff512f, #dd2476, #1c64ff);
+  }
+  40% {
+    background-image: linear-gradient(144deg, #ff512f, #dd2476, #1c64ff);
+  }
+  50% {
+    background-image: linear-gradient(180deg, #ff512f, #dd2476, #1c64ff);
+  }
+  60% {
+    background-image: linear-gradient(216deg, #ff512f, #dd2476, #1c64ff);
+  }
+  70% {
+    background-image: linear-gradient(252deg, #ff512f, #dd2476, #1c64ff);
+  }
+  80% {
+    background-image: linear-gradient(288deg, #ff512f, #dd2476, #1c64ff);
+  }
+  90% {
+    background-image: linear-gradient(324deg, #ff512f, #dd2476, #1c64ff);
+  }
+  100% {
+    background-image: linear-gradient(360deg, #ff512f, #dd2476, #1c64ff);
+  }
+}
+// End styling Portfolio

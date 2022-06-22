@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Full-Stack Developer{% endblock %}
+
+{% block content %}
+<section id="portfolio" class="container">
+  <h1 class="title">Portfolio</h1>
+  <div class="flex-container">
+    {% for portfolio in portfolioes %}
+      <div class="pro">
+        <img src="{{ portfolio.image.url }}" alt="" />
+        <div class="pro-info">
+          <h3>{{ portfolio.title }}</h3>
+          <p>{{ portfolio.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="skills" class="container">
+  <h1 class="title">Skills</h1>
+  <div class="flex-container">
+    {% for skill in skills %}
+      <svg class="radial-progress" data-percentage="{{ skill.percentage }}" viewBox="0 0 80 80">
+        <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+        <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 147.341px;"></circle>
+        <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{{ skill.name }}</text>
+      </svg>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="about"></section>
+{% endblock %}

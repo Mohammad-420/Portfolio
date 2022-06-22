@@ -1,0 +1,30 @@
+{% load static %}
+<header id="header">
+  <nav id="navbar">
+    <button id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <ul class="menu">
+      <li>
+        <a href="#profile"><img src="{% static 'img/mypic.jpg' %}" alt="" /></a>
+      </li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="btn">Download CV</button></li>
+    </ul>
+  </nav>
+  <div id="profile">
+    <div class="image">
+      <img src="{% static 'img/mypic.jpg' %}" alt="" />
+      <div class="border"></div>
+    </div>
+    <h1>Mohammad Askari</h1>
+    <h3 class="typed">
+      <span></span>
+    </h3>
+  </div>
+</header>

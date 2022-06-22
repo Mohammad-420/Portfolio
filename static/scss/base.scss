@@ -1,0 +1,150 @@
+// Colors
+$black: #000;
+$black_alpha: #00000066;
+$white: #ffffff;
+$minion_yellow: #ffe74c;
+$minion_yellow_alpha: #ffe74c7d;
+$red: #FF0000;
+$yellow: #F6F60A;
+$green: #0DE214;
+$spanish_gray: #9b9b9b;
+$light_gray: #A2A2A2;
+$dark_gray: #232726;
+
+@import "header";
+@import "content";
+@import "footer";
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Oswald:wght@400;500;700&family=Ubuntu+Mono:wght@700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  background-color: $light_gray;
+  background-image: url("../img/gray_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-bottom: 5%;
+}
+.title {
+  position: relative;
+  color: $white;
+  background-color: transparent;
+  font-size: 28pt;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  width: 9em;
+  height: 2.5em;
+  margin-top: 45px;
+  margin-bottom: 85px;
+
+  $border-width: 0.18em;
+
+  &::after {
+    position: absolute;
+    content: "";
+    border-top: $border-width solid $white;
+    border-left: $border-width solid $white;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 50%;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    border-bottom: $border-width solid $white;
+    border-right: $border-width solid $white;
+    right: 0px;
+    bottom: 0px;
+    width: 50%;
+    height: 50%;
+  }
+}
+.btn {
+  position: relative;
+  color: $white;
+  font-size: 14pt;
+  padding: 10px 25px;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 5px; /* control the border thickness */
+    background: linear-gradient(to right, $red, $yellow 33% 66%, $green);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+// Responsive
+@media (max-width: 920px) {
+  .title {
+    font-size: 26pt;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 620px) {
+  .title {
+    font-size: 24pt;
+    margin-top: 35px;
+    margin-bottom: 75px;
+  }
+}
+@media (max-width: 470px) {
+  .title {
+    font-size: 22pt;
+    margin: 30px;
+    margin-bottom: 70px;
+  }
+  .btn {
+    font-size: 12pt;
+  }
+}
+@media (max-width: 371px) {
+  .title {
+    font-size: 20pt;
+    margin-top: 25px;
+    margin-bottom: 65px;
+  }
+  .btn {
+    font-size: 10pt;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Askari | Full-Stack Developer</title>
+    <link rel="stylesheet" href="../static/css/base.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.js"
+      integrity="sha512-ggJ7yQCnXifbDXFFfyNhegaNXkkPMP+0cxMDobX6pABvU4zrqD+NMXxrGoAK9iANboRjpR4ajwWHCCfJXJFpJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header id="header">
+      <nav id="navbar">
+        <button id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </button>
+        <ul class="menu">
+          <li><a href="#profile"><img src="../static/img/mypic.jpg" alt=""></a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button class="btn">Download CV</button></li>
+        </ul>
+      </nav>
+      <div id="profile">
+        <div class="image">
+          <img src="../static/img/mypic.jpg" alt="" />
+          <div class="border"></div>
+        </div>
+        <h1>Mohammad Askari</h1>
+        <h3 class="typed">
+          <span></span>
+        </h3>
+      </div>
+    </header>
+
+    <section id="content">
+      <section id="portfolio" class="container">
+        <h1 class="title">Portfolio</h1>
+        <div class="flex-container">
+          <div class="pro">
+            <img src="https://loremflickr.com/640/840" alt="" />
+            <div class="pro-info">
+              <h3>Black Cat</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="pro">
+            <img src="https://loremflickr.com/640/840" alt="" />
+            <div class="pro-info">
+              <h3>Black Cat</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="pro">
+            <img src="https://loremflickr.com/640/840" alt="" />
+            <div class="pro-info">
+              <h3>Black Cat</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="pro">
+            <img src="https://loremflickr.com/640/840" alt="" />
+            <div class="pro-info">
+              <h3>Black Cat</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="pro">
+            <img src="https://loremflickr.com/640/840" alt="" />
+            <div class="pro-info">
+              <h3>Black Cat</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="container">
+        <h1 class="title">Skills</h1>
+        <div class="flex-container">
+          {% for skill in skills %}
+            <svg class="radial-progress" data-percentage="{{ skill.percentage }}" viewBox="0 0 80 80">
+              <circle class="incomplete" cx="40" cy="40" r="35"></circle>
+              <circle class="complete" cx="40" cy="40" r="35" style="stroke-dashoffset: 147.341px;"></circle>
+              <text class="percentage" x="50%" y="57%" transform="matrix(0, 1, -1, 0, 80, 0)">{{ skill.name }}</text>
+            </svg>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="about"></section>
+    </section>
+
+    <footer id="contact">
+      <div class="foot-col">
+        <h1>social medias</h1>
+        <ul class="social">
+          <li>
+            <a href=""><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-telegram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../static/js/Front.js"></script>
+  </body>
+</html>
